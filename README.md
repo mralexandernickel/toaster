@@ -5,6 +5,4 @@ Show some Notifications to your User, supporting 5 different States which are "d
 
 ### Use
 
-'''
-µ.toaster("info", "Your important Message to the User")
-'''
+   µ.toaster("info", "Your important Message to the User")
