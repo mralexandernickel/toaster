@@ -1,0 +1,33 @@
+.toaster {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  transition: all, 250ms;
+}
+.toaster .toast {
+  background: #000;
+  padding: 20px;
+  color: #fff;
+  bottom: 0px;
+  margin: 20px;
+  width: 300px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+  transition: all 250ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  position: relative;
+  border-left: 5px solid transparent;
+}
+.toaster .toast.out {
+  bottom: -100px;
+}
+.toaster .toast.success {
+  border-color: green;
+}
+.toaster .toast.info {
+  border-color: blue;
+}
+.toaster .toast.warn {
+  border-color: orange;
+}
+.toaster .toast.danger {
+  border-color: red;
+}

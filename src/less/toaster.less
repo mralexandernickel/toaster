@@ -1,0 +1,46 @@
+//
+// Styles fot the Toaster
+//
+// @author Alexander Nickel <mr.alexander.nickel@gmail.com>
+//
+@duration: 250ms;
+
+.toaster {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  transition: all @duration;
+
+  .toast {
+    background: #000;
+    padding: 20px;
+    color: #fff;
+    bottom: 0px;
+    margin: 20px;
+    width: 300px;
+    box-shadow: 0 0 5px rgba(0,0,0,.8);
+    transition: all @duration cubic-bezier(0.550, 0.055, 0.675, 0.190);
+    position: relative;
+    border-left: 5px solid transparent;
+
+    &.out {
+      bottom: -100px;
+    }
+
+    &.success {
+      border-color: green;
+    }
+
+    &.info {
+      border-color: blue;
+    }
+
+    &.warn {
+      border-color: orange;
+    }
+
+    &.danger {
+      border-color: red;
+    }
+  }
+}
