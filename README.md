@@ -21,7 +21,7 @@ Second parameter is the message to appear inside the toast. NOT optional!
 Third parameter is the duration for the toast to create. optional.
 
 ## Call via data-attributes
-You can also call a toast via data attributes. The toast will appear on click.
+You can also call a toast via data attributes. The toast will appear on click. Elements can be injected asynchronous.
 ```html
 <button data-toggle="toast" data-message="some string for the toast" data-priority="success">show success</button>
 ```
