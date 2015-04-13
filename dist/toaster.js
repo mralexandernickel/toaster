@@ -6,21 +6,35 @@
   window.µ = window.µ || {};
 
   vars = {
+    script: null,
     container: null,
-    states: ["default", "info", "success", "warn", "danger"],
-    duration: 5000
+    priorities: ["default", "info", "success", "warn", "danger"],
+    duration: 5000,
+    position: "bottom left"
   };
 
   methods = {
     init: function(options) {
+      var ts;
+      ts = document.getElementById("ts");
+      if (ts.getAttribute("data-position") != null) {
+        vars.position = ts.getAttribute("data-position");
+      }
+      if (ts.getAttribute("data-duration") != null) {
+        vars.duration = parseInt(ts.getAttribute("data-duration"));
+      }
       if (!vars.container) {
         vars.container = document.createElement("div");
-        vars.container.classList.add("toaster");
-        return document.body.appendChild(vars.container);
+        vars.container.className += "toaster " + vars.position;
+        document.body.appendChild(vars.container);
       }
+      return console.log(vars);
     },
-    add_toast: function(priority, text) {
+    add_toast: function(priority, text, duration) {
       var toast;
+      if (duration == null) {
+        duration = vars.duration;
+      }
       toast = document.createElement("div");
       toast.classList.add("toast", "" + priority, "out");
       toast.textContent = text;
@@ -32,7 +46,7 @@
             return vars.container.removeChild(toast);
           });
           return toast.classList.add("out");
-        }, vars.duration);
+        }, duration);
       }, 1);
     }
   };
@@ -42,7 +56,7 @@
     method = arguments[0], options = 2 <= arguments.length ? __slice.call(arguments, 1) : [];
     if (methods[method]) {
       return methods[method](options);
-    } else if (vars.states.indexOf(method) >= 0) {
+    } else if (vars.priorities.indexOf(method) >= 0) {
       return methods.add_toast(method, options[0]);
     } else if (typeof method === "object" || !method) {
       return methods.init(arguments);
@@ -51,12 +65,12 @@
     }
   };
 
-  µ.toaster();
-
   document.body.addEventListener("click", function(e) {
     if (e.target.getAttribute("data-toggle") === "toast") {
       return µ.toaster(e.target.getAttribute("data-priority"), e.target.getAttribute("data-message"));
     }
   });
+
+  µ.toaster();
 
 }).call(this);

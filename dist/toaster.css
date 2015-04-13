@@ -1,23 +1,47 @@
 .toaster {
   position: fixed;
+  z-index: 9999;
+  transition: all 250ms;
+}
+.toaster.top {
+  top: 0;
+}
+.toaster.top .toast {
+  top: 0;
+}
+.toaster.top .toast.out {
+  top: -100px;
+}
+.toaster.right {
+  right: 0;
+}
+.toaster.right .toast {
+  border-right: 5px solid transparent;
+}
+.toaster.bottom {
   bottom: 0;
+}
+.toaster.bottom .toast {
+  bottom: 0;
+}
+.toaster.bottom .toast.out {
+  bottom: -100px;
+}
+.toaster.left {
   left: 0;
-  transition: all, 250ms;
+}
+.toaster.left .toast {
+  border-left: 5px solid transparent;
 }
 .toaster .toast {
-  background: #000;
+  background: #000000;
   padding: 20px;
-  color: #fff;
-  bottom: 0px;
+  color: #ffffff;
   margin: 20px;
   width: 300px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
   transition: all 250ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
   position: relative;
-  border-left: 5px solid transparent;
-}
-.toaster .toast.out {
-  bottom: -100px;
 }
 .toaster .toast.success {
   border-color: green;
