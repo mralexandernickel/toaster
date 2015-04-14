@@ -13,6 +13,23 @@
   <button data-toggle="toast" data-message="some string for the toast" data-priority="info">show info</button>
   <button data-toggle="toast" data-message="some string for the toast" data-priority="warn">show warn</button>
   <button data-toggle="toast" data-message="some string for the toast" data-priority="danger">show danger</button>
+  <h1>Example Form</h1>
+  <form action="#" method="post" id="form">
+    <div>
+      <input type="text" placeholder="Your Name">
+    </div>
+    <div>
+      <textarea placeholder="Your Message"></textarea>
+    </div>
+    <div>
+      <input type="submit"
+             value="Send Message"
+             data-toggle="toast"
+             data-message="Your Message has been successfully delivered"
+             data-priority="success">
+    </div>
+  </form>
+  <script>document.getElementById("form").addEventListener("submit", function(e){e.preventDefault()})</script>
   <script id="ts" src="dist/toaster.js" data-duration="8000" data-position="bottom left" async></script>
 </body>
 </html>
