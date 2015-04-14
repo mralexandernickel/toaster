@@ -49,7 +49,7 @@ methods =
   if methods[method]
     methods[method] options
   else if vars.priorities.indexOf(method) >= 0
-    methods.add_toast method, options[0]
+    methods.add_toast method, options[0], options[1]
   else if typeof method is "object" or not method
     methods.init arguments
   else
@@ -57,6 +57,6 @@ methods =
  
 document.body.addEventListener "click", (e) ->
   if e.target.getAttribute("data-toggle") is "toast"
-    µ.toaster e.target.getAttribute("data-priority"), e.target.getAttribute("data-message")
+    µ.toaster e.target.getAttribute("data-priority"), e.target.getAttribute("data-message"), e.target.getAttribute("data-duration")
 
 µ.toaster()

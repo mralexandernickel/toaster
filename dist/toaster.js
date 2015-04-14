@@ -26,9 +26,8 @@
       if (!vars.container) {
         vars.container = document.createElement("div");
         vars.container.className += "toaster " + vars.position;
-        document.body.appendChild(vars.container);
+        return document.body.appendChild(vars.container);
       }
-      return console.log(vars);
     },
     add_toast: function(priority, text, duration) {
       var toast;
@@ -57,7 +56,7 @@
     if (methods[method]) {
       return methods[method](options);
     } else if (vars.priorities.indexOf(method) >= 0) {
-      return methods.add_toast(method, options[0]);
+      return methods.add_toast(method, options[0], options[1]);
     } else if (typeof method === "object" || !method) {
       return methods.init(arguments);
     } else {
@@ -67,7 +66,7 @@
 
   document.body.addEventListener("click", function(e) {
     if (e.target.getAttribute("data-toggle") === "toast") {
-      return µ.toaster(e.target.getAttribute("data-priority"), e.target.getAttribute("data-message"));
+      return µ.toaster(e.target.getAttribute("data-priority"), e.target.getAttribute("data-message"), e.target.getAttribute("data-duration"));
     }
   });
 

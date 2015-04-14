@@ -23,5 +23,12 @@ Third parameter is the duration for the toast to create. optional.
 ## Call via data-attributes
 You can also call a toast via data attributes. The toast will appear on click. Elements can be injected asynchronous.
 ```html
-<button data-toggle="toast" data-message="some string for the toast" data-priority="success">show success</button>
+<button data-toggle="toast" data-message="some string for the toast" data-priority="success" data-duration="2000">show success for 2 seconds</button>
+```
+...for better readiblity:
+```html
+<button data-toggle="toast"
+        data-message="some string for the toast"
+        data-priority="success"
+        data-duration="2000">show success for 2 seconds</button>
 ```
