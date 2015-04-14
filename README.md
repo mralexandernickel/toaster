@@ -3,8 +3,12 @@ Show some notifications to your user, supporting 5 different states which are "d
 Usage
 =====
 
-## HTML
-Just include the JS-file like this:
+## Include
+Include the CSS:
+```html
+<link rel="stylesheet" href="dist/toaster.css" type="text/css"></link>
+```
+Include the JS like this:
 ```html
 <script id="ts"
         src="dist/toaster.js"
@@ -13,8 +17,8 @@ Just include the JS-file like this:
         async></script>
 ```
 The data attributes are optional.
-The default values are 5000 for duration and "bottom left" for position.
-The id attribute is NOT optional, as long as document.currentScript is not supported in browsers we need to support.
+
+The default values are 5000 for duration and "bottom left" for position. The id attribute is NOT optional, as long as document.currentScript is not supported in browsers we need to support.
 
 ## Call via JS
 ```javascript
