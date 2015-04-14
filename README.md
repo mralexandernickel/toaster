@@ -1,4 +1,4 @@
-Show some notifications to your user, supporting 5 different states which are "default", "info", "success", "warn" and "danger".
+Show some responsive notifications to your user, supporting 5 different states which are "default", "info", "success", "warn" and "danger".
 
 Usage
 =====
