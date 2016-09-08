@@ -22,14 +22,15 @@
       <textarea placeholder="Your Message"></textarea>
     </div>
     <div>
-      <input type="submit"
-             value="Send Message"
-             data-toggle="toast"
-             data-message="Your Message has been successfully delivered"
-             data-priority="success">
+      <input
+        type="submit"
+        value="Send Message"
+        data-toggle="toast"
+        data-message="Your Message has been successfully delivered"
+        data-priority="success">
     </div>
   </form>
   <script>document.getElementById("form").addEventListener("submit", function(e){e.preventDefault()})</script>
-  <script id="ts" src="dist/toaster.js" data-duration="8000" data-position="bottom left" async></script>
+  <script src="dist/toaster.js" async></script>
 </body>
 </html>
