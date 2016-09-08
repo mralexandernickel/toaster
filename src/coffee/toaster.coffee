@@ -14,11 +14,6 @@ methods =
   # @param {Object} Object with options which could be anytime set on init...TODO #maybe
   #
   init: (options) ->
-    ts = document.getElementById "ts"
-    if ts.getAttribute("data-position")?
-      vars.position = ts.getAttribute "data-position"
-    if ts.getAttribute("data-duration")?
-      vars.duration = parseInt ts.getAttribute("data-duration")
     unless vars.container
       vars.container = document.createElement "div"
       vars.container.className += "toaster #{vars.position}"
@@ -54,7 +49,7 @@ methods =
     methods.init arguments
   else
     console.log "so WHAT EXACTLY you want me to do now, huh?!...."
- 
+
 document.body.addEventListener "click", (e) ->
   if e.target.getAttribute("data-toggle") is "toast"
     µ.toaster e.target.getAttribute("data-priority"), e.target.getAttribute("data-message"), e.target.getAttribute("data-duration")
